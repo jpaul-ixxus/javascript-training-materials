@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>using odd() and even() </title>
+  <style>
+
+  table {
+    background:#f3f7f5;
+  }
+  </style>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<script>
+function MakeSelection(i){
+ $('tr').css('background-color', '#f3f7f5');
+  $('tr').filter(i).css('background-color', 'red');
+}
+ 
+</script>
+</head>
+<body>
+<p> <a href="#" OnMouseOver="MakeSelection(':even')">Even cells</a> | <a href="#" OnMouseOver="MakeSelection(':odd')">Odd cells</a> | </p>
+  <table border="1">
+    <tr><td>Row with Index #0</td></tr>
+    <tr><td>Row with Index #1</td></tr>
+
+    <tr><td>Row with Index #2</td></tr>
+    <tr><td>Row with Index #3</td></tr>
+	<tr><td>Row with Index #4</td></tr>
+    <tr><td>Row with Index #5</td></tr>
+
+    <tr><td>Row with Index #6</td></tr>
+    <tr><td>Row with Index #7</td></tr>
+  </table>
+  <p> rewrite script to use button or link to highlight and change color of odd and the even cells </p>
+  </body>
+  </html>
+

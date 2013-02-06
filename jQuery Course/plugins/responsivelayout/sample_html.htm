@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQuery and responsive sites</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="response.min.js"></script>
+<body data-responsejs='{
+    "create": [
+        { "prop":"width", "prefix": "min-width- r src", "lazy":true }
+    ]}'
+>
+<h1> Jquery and responsive sites</h1>
+<!-- Keep default when viewport is <320px wide or no-js. 
+    Load data-r320 when viewport is 320–960px wide. 
+    Load data-r961 when viewport is 961px+ wide. --> 
+
+<div data-r320="<form><select>
+  <option>London</option>
+  <option>New York</option>
+  <option>Paris</option>
+ </select> </form>" data-r961="London<br/>New York<br/>Paris">default</div>
+
+</body>

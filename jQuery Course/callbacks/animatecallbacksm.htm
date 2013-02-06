@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Fading an image in</title>
+ 
+ <link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<style>
+#animateH {height:40px; background-color:#cc0000; width:50px; text-decoration:none;}
+</style>
+	<script type="text/javascript">
+
+function bringOut(){
+        $("#animateH").animate({ 
+            height: "70px", 
+            width: "500px",
+			}, 1000,Sendtext); 
+} 
+function bringIn(){
+        $("#animateH").animate({ 
+            height: "40px", 
+            width: "50px", 
+        }, 1000, function() { 
+          $('#finish').html('') 
+        }); 
+} 
+function Sendtext(){
+$('#finish').html('<a href="javascript:bringIn()">Close menu</a>') 
+}
+    </script>
+  </head>
+
+  <body>
+    <h1>Animate</h1>
+    <div id="animateH"><a href="javascript:bringOut()">menu</a></div>
+	<div id="finish"></div>
+  </body>
+</html>

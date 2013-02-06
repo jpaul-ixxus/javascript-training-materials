@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' lang = 'en'>
+	<head>
+      <meta http-equiv = 'Content-Type' content = 'text/html;charset=utf-8' />
+      <script type = 'text/javascript'>
+
+      var Fader = function ()
+         {
+         function NullFunc () { }
+
+         var DefaultCrement   = 0.20;
+
+         var BlockStr         = "block";
+         var NoneStr          = "none";
+
+         var ZeroStr          = "0";
+         var OneStr           = "1";
+
+         var Delay            = 80;
+
+         var SetOpacityToZero = function (Elem)          { Elem.style.opacity = ZeroStr; };
+         var SetOpacity       = function (Elem, Opacity) { Elem.style.opacity = Opacity; };
+         var SetOpacityToOne  = function (Elem)          { Elem.style.opacity = OneStr;  };
+
+         return {
+
+            In : function (Elem, OnComplete, Incr)
+               {
+               OnComplete = OnComplete || NullFunc;
+               Incr       = Incr       || DefaultCrement;
+
+               Elem.style.opacity = ZeroStr;
+               Elem.style.display = BlockStr;
+
+               var Opacity = 0;
+
+               var Timer   = setInterval (function ()
+                  {
+                  Opacity += Incr;
+
+                  if (Opacity < 1) { Elem.style.opacity = Opacity; }
+                  else
+                     {
+                     Elem.style.opacity = OneStr;
+
+                     clearInterval (Timer);
+                     OnComplete    ();
+
+                     }
+
+                  }, Delay);
+
+               },
+
+            // -------------------------------------------------------
+
+            Out : function (Elem, OnComplete, Decr)
+               {
+               OnComplete  = OnComplete || NullFunc;
+               Decr        = Decr       || DefaultCrement;
+
+               var Opacity = 1;
+
+               var Timer   = setInterval (function ()
+                  {
+                  Opacity -= Decr;
+
+                  if (Opacity > 0.01) { Elem.style.opacity = Opacity; }
+                  else
+                     {
+                     Elem.style.opacity = ZeroStr;
+                     Elem.style.display = NoneStr;
+
+                     clearInterval (Timer);
+                     OnComplete    ();
+
+                     }
+
+                  }, Delay);
+
+               }
+
+            };
+
+         } ();
+
+
+
+
+      function Init ()
+         {
+         var Image = document.getElementById ("Image");
+
+         document.getElementById ("FadeIn").onclick = function ()
+            {
+            Fader.In (Image);
+            };
+
+         document.getElementById ("FadeOut").onclick = function ()
+            {
+            Fader.Out (Image);
+            };
+
+         }
+
+      </script>
+
+      <style type = 'text/css'>
+
+      </style>
+
+      <title>Exercise 10</title>
+	</head>
+
+   <body onload = 'Init ()'>
+
+      <button type = 'button' id = 'FadeIn' >Fade In </button>
+      <button type = 'button' id = 'FadeOut'>Fade Out</button>
+
+      <br />
+
+      <img id = "Image" src = "Exercise_10_Content/Singapura.jpg" />
+
+   </body>
+</html>
+

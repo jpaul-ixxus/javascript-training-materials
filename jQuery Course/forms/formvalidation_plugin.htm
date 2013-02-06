@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Form validation </title>
+	<link rel="stylesheet" href="css/simple.css" type="text/css" media="screen" charset="utf-8"/>
+	<link rel="stylesheet" href="form.css" type="text/css" media="screen" charset="utf-8"/>
+   <script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+	<script src="jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<style>
+.error{color:#ff0000;}
+</style>
+<body>
+	<div id="container">
+	
+      <div id="signup">
+        <h2>Sign up</h2>  
+        <form action="http://www.creativewords.co.uk">
+          <div>
+            <label for="name">Name:</label>
+            <input name="name" id="name" type="text"/>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="text"/>
+          </div>
+          <div>
+            <label for="website">Web site URL:</label>
+            <input name="website" id="website" type="text" />
+          </div>    
+			<div>
+            <label for="gender">Gender:</label>
+            Male <input name="gender" id="gender" type="radio" value="Male"/> <br/>
+			Female <input name="gender" id="gender" type="radio" value="female"/> <br/>
+          </div>  		  
+          <div>
+            <label for="password">Password:</label>
+            <input name="password" id="password" type="password" />
+          </div>   
+          <div>
+            <label for="passconf">Confirm Password:</label>
+            <input name="passconf" id="passconf" type="password" />
+          </div>      
+          <div>
+          	<input type="submit" value="Submit" />
+          </div>
+        </form>
+		
+		<hr/>
+		<p>
+		The Validation plugin will add a new labelelement after each form field to contain the error message; by default this will have a class of error, so you're free to style it in as stern a fashion as you'd like.<br/>
+		See<br/>
+		http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+		<br/>
+		And follow links to documentation
+		</p>
+      
+      
+		</div>
+
+	
+	</div>
+</body>
+</html>

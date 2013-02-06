@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Animate</title>
+ <link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<style>
+#animateH {height:40px; background-color:#cc0000; width:50px; text-decoration:none;}
+</style>
+	<script type="text/javascript">
+
+function bringOut(){
+        $("#animateH").animate({ 
+            height: "70px", 
+            width: "500px", 
+        }, 1000); 
+} 
+
+    </script>
+  </head>
+
+  <body>
+    <h1>Animate</h1>
+    <div id="animateH"><a href="javascript:bringOut()">menu</a></div>
+  </body>
+</html>

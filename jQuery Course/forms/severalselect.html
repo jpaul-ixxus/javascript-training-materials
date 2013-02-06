@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Select form</title>
+  <style>
+ strong { color:blue; }
+  </style>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+  <script language="javascript">
+    function displayVals() {
+      var severalValues = $("#various").val() || [];
+      $("strong").text(severalValues.join(", "));
+	  
+    }
+</script>
+</head>
+<body>
+<form>
+<h2>Cities</h2>
+<form>
+  <select id="various" multiple="multiple" onChange="displayVals()">
+    <option>London</option>
+    <option>New York</option>
+	<option>Paris</option>
+  </select>
+ </form> 
+<p><strong></strong></p>
+
+
+</body>
+</html>
