@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' lang = 'en'>
+	<head>
+      <meta http-equiv = 'Content-Type' content = 'text/html;charset=utf-8' />
+      <script type = 'text/javascript'>
+
+      function CreateBtn (BtnID, Action)
+         {
+         Action = Action || function () { };
+
+         function SuspendedEnable  () {                Disabled = false; }
+         function SuspendedDisable () {                Disabled = true;  }
+
+         function ResumedEnable    () { Btn.disabled = Disabled = false; }
+         function ResumedDisable   () { Btn.disabled = Disabled = true;  }
+
+         var Btn      = document.getElementById (BtnID);
+         var Disabled = false;
+
+         var Enable   = ResumedEnable;
+         var Disable  = ResumedDisable;
+
+         Btn.onclick  = Action;
+
+         return {
+
+            Enable  : function () { Enable  (); },
+            Disable : function () { Disable (); },
+
+            Suspend : function ()
+               {
+               Btn.disabled = true;
+
+               Enable       = SuspendedEnable;
+               Disable      = SuspendedDisable;
+
+               },
+
+            Resume  : function ()
+               {
+               Btn.disabled = Disabled;
+
+               Enable       = ResumedEnable;
+               Disable      = ResumedDisable;
+
+               }
+
+            };
+
+         }
+
+      // ------------------------------------------------------------------------------------
+
+      function Init ()
+         {
+         var Output     = document.getElementById ("Output");
+         var TestButton = CreateBtn               ("TestButton", function ()
+            {
+            Output.firstChild.nodeValue = "Test Button Clicked";
+            });
+
+         document.getElementById ("Suspend").onclick = function () { TestButton.Suspend (); Output.firstChild.nodeValue = ""; };
+         document.getElementById ("Resume") .onclick = function () { TestButton.Resume  (); Output.firstChild.nodeValue = ""; };
+         document.getElementById ("Enable") .onclick = function () { TestButton.Enable  (); Output.firstChild.nodeValue = ""; };
+         document.getElementById ("Disable").onclick = function () { TestButton.Disable (); Output.firstChild.nodeValue = ""; };
+
+         }
+
+      </script>
+
+      <title>Exercise 12</title>
+	</head>
+
+   <body onload = 'Init ()'>
+
+      <button type = 'button' id = 'Suspend'   >Suspend </button>
+      <button type = 'button' id = 'Resume'    >Resume  </button><br />
+
+      <button type = 'button' id = 'Enable'    >Enable  </button>
+      <button type = 'button' id = 'Disable'   >Disable </button><br />
+
+      <button type = 'button' id = "TestButton">Click Me</button><br />
+
+      <p id = "Output">.</p>
+
+   </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang = "en">
+   <head>
+      <link rel = "stylesheet" type = "text/css" href = "Course_Style.css" media = "all" />
+      <script type = "text/javascript">
+
+      var Box = null; // Do not edit this line of code
+	  
+	  var Move = 5;
+      var Left = 0;	  
+	  
+      //
+      // Your code goes here
+      //
+
+	  function Animate ()
+	  	{
+		if (Left + Box.offsetWidth > document.body.clientWidth) {  Move *= -1; }  
+        if (Left < 0) {  Move *= -1; }  
+		
+		Left          += Move;	
+		Box.style.left = Left + "px";
+		        
+		}
+
+      function Init ()
+        {
+         Box = document.getElementById ("Box1"); // Do not edit this line of code
+         Box.style.minWidth = "90px"
+		 Box.style.display = ""
+         setInterval (Animate, 10);
+		 
+        }
+
+      </script>
+
+      <title>Exercise 06</title>
+
+   </head>
+
+   <body onload = "Init ()">
+      <div class = "MovingBox" id = "Box1">
+      Moving Right
+      </div>
+      <div class = "MovingBox" id = "Box2">
+      Moving Left
+      </div>
+   </body>
+
+</html>

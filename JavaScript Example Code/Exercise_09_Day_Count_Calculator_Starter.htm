@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' lang = 'en'>
+	<head>
+      <meta http-equiv = 'Content-Type' content = 'text/html;charset=utf-8' />
+      <script type = 'text/javascript'>
+
+      // This calculates the number of days in Febrary given a value for the year (YY)
+      // Note that 2008 was a leap year
+
+      function (YY)
+         {
+         if ((YY % 4) == 0)
+            {
+            if (YY % 100 >  0) { return 29; }
+            if (YY % 400 == 0) { return 29; }
+            }
+
+         return 28;
+
+         }
+
+      </script>
+
+      <title>Exercise 09</title>
+
+	</head>
+
+   <body>
+   </body>
+</html>
+
