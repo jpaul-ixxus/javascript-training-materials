@@ -1,0 +1,56 @@
+<html>
+<head>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript"> 
+$(document).ready(function(){
+$("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+ 
+<style type="text/css"> 
+#panel{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+#panel{
+height:120px;
+display:none;
+}
+#flip{
+margin:0px;
+padding:5px;
+text-align:center;
+background-color:#000000;
+border:solid 1px #c3c3c3;
+color:#ffffff;
+z-index:2;
+}
+#container { width:500px; height:600px; border-style:solid; border-width:1px; margin:auto;}
+#mytext { position:absolute; top: 150px; z-index:1;}
+</style>
+</head>
+ 
+<body>
+<div id="container">
+<div id="panel">
+<p>The wonders of a drop down menu.</p>
+<p>You could get so much more in a navigation like this.</p>
+</div>
+ 
+<div id="flip">Show/Hide Panel</div>
+ <div id="mytext">Your text is here<br/>
+ And anyother thing that you like
+ </div>
+ 
+ </div>
+</body>
+</html>
+
+
+

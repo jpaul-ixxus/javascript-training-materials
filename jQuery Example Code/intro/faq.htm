@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Change dimensions </title>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ $("li p").hide()
+})
+$(document).ready(function(){ // This is the code ready wrapper
+  $("li").click(function(){
+  $(this).children().toggle();
+   });
+}); //This ends the code ready handler
+</script>
+</head>
+
+<body>
+<h1>FAQ</h1>
+<ol>
+<li>What is the capital of the UK?
+<p>London</p></li>
+<li> In what Country would you find New York?
+<p>USA</p></li>
+<li> What do you eat when you are hungry?
+<p>food</p></li>
+</ol>
+</body>
+
+</html>

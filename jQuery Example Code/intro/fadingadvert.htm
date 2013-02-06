@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fading an image in</title>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+    <script>
+      function adIn(){
+        $('#target').fadeIn(7000);
+      }
+	    function adOut(){
+        $('#target').fadeOut(2000);
+      }
+
+    </script>
+	<style>
+	#target {display: none;  position:absolute; top:10px; z-index:10; width:90%; height:90%; background:#000000; padding:10px;}
+	h1, h2 {color: #ffffff;}
+	</style>
+	</style>
+  </head>
+
+  <body>
+    <h3>Fading an image in</h3>
+    <div id="target"><p align="right" ><a href="#" OnClick="adOut()" style="color:#ffffff;">Close ad</a></p> &nbsp;<br/>
+	
+	<h1>Now I have caught your attention you have to read my advert</h1>
+	<h2>SPECIAL OFFER - Pay an extra pound and you will get Christmas on the 26th December as well as the 25th</h2>
+
+	</div>
+    <br>
+	 <div style="z-index:5;"><a href="#" OnMouseover="adIn()"><img  src="../images/aiden01.jpg"  width="100" height="100" border="0"/></a></div>
+  
+  </body>
+</html>

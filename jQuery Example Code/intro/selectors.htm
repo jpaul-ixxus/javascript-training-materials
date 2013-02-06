@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> basics of jquery </title>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<style>
+.bigRed{font-size:110%; color:#ff0000;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+$("*").addClass("bigRed");
+//$("p").addClass("bigRed");
+//$("p i").addClass("bigRed");
+//$("#content div").hide();
+//$("#content").children().hide();
+/* Create a function that changes the colour of a link when it is clicked 
+.removeClass() .show()*/
+
+})
+</script>
+</head>
+
+<body>
+<h1>Understanding selectors and methods in jQuery</h1>
+<p>You are a selector</p>
+<p>This is <i>inside</i> another tag</p>
+<div id="nav"> Sports | News | Food </div>
+<div id="content">
+ <div id="sports"> Football nevers fails to capture the UK audience</div>
+  <div id="news"> Football nevers fails to capture the UK audience</div>
+   <div id="food"> Football nevers fails to capture the UK audience</div>
+</div>
+</body>
+</html>

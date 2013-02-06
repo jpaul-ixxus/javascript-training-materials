@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Change dimensions </title>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<style>
+ strong { color:#666666; text-transform:uppercase; font-size:110%;}
+ th {background:#000000; color:#ffffff;}
+  </style>
+ 
+  <script language="javascript">
+    function displayVals() {
+      var singleValues = $("#single").val();
+	  var valueS = '.' + singleValues;
+	 // alert(valueS);
+      $("strong").text(singleValues);
+	   $(".uk, .usa, .canada").hide();
+	   $(valueS).show();
+    }
+</script>
+</head>
+<body>
+<form>
+<h2>Cities</h2>
+<form>
+  <select id="single" onChange="displayVals()">
+    <option value="uk">UK</option>
+    <option value="usa">USA</option>
+	<option value="canada">Canada</option>
+  </select>
+ </form> 
+<p><strong></strong></p>
+
+<table width="300" border="1" cellspacing="0">
+<tr>
+<th> Hotels </th> <th> Town </th>
+</tr>
+
+<tr class="usa">
+<td> Holiday Inn </td> <td> New York </td>
+</tr>
+<tr class="uk">
+<td> Travel Lodge </td> <td> London </td>
+</tr>
+<tr class="canada">
+<td> Nice place </td> <td> Provost</td>
+</tr>
+<tr class="uk">
+<td> Grays Hotel </td> <td> Manchester </td>
+</tr>
+<tr class="usa">
+<td> Ann Inn </td> <td> Orlando </td>
+</tr>
+<tr  class="canada">
+<td> Bear House </td> <td> Stony Plain </td>
+</tr>
+<tr class="uk">
+<td> Expensive inn </td> <td> Sevenoaks </td>
+</tr>
+<tr class="canada">
+<td> High gardens </td> <td> Killam </td>
+</tr>
+<tr class="usa">
+<td> White place </td> <td> Auburn </td>
+</tr>
+<tr class="canada">
+<td> Mountain Hotel </td> <td> Vulcan </td>
+</tr>
+<tr class="canada">
+<td  class="usa"> Trust Hotel </td> <td class="usa"> Orlando </td>
+</tr>
+</table>
+
+
+</body>
+
+</html>

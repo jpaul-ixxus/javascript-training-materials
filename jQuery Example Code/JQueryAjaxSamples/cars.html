@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Using the jQuery load() function</title>
+    <script src="http://code.jquery.com/jquery-latest.js">
+    </script>
+  
+    <script>
+      function TakeFords(){
+          $('#b').load('carsstocks.html #fords');
+      };
+	  function TakeVauxhalls(){
+          $('#b').load('carsstocks.html #vauxhall');
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1>Select your choice</h1>
+    <p><a href="javascript:TakeFords">Fords</a>  |  <a href="javascript:TakeVauxhalls">Vauxhall</a></p>
+    Got this from the server: <div id="b"></div>
+  </body>
+</html>
