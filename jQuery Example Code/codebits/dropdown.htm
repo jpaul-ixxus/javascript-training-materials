@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Dropdown </title>
+<link rel="stylesheet" type="text/css" href="../common/style.css">
+<script type="text/javascript" src="../common/jquery-1.8.3.min.js"></script>
+<style>
+#container {
+  position: relative;
+  margin:auto;
+  width:800px;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#menu, #menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#menu li {
+  float: left;
+  background: #cccccc;
+}
+
+#menu a {
+  display: block;
+  padding: 5px;
+  width: 130px;
+}
+
+#menu li ul {
+  position: absolute;
+  left: -999em;
+  width: 140px;
+}
+
+#menu li:hover ul, #menu li ul:hover {
+  left:auto;
+}
+#footer {
+  background:#cccccc;
+  width:800px;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#menu li ul').css({
+    display: "none",
+    left: "auto"
+  });
+  $('#menu li').hover(function() {
+    $(this)
+      .find('ul')
+      //.stop(true, true)
+      .slideDown('fast');
+  }, function() {
+    $(this)
+      .find('ul')
+      //.stop(true,true)
+      .fadeOut('fast');
+  });
+});
+</script>
+
+</head>
+<body>
+<div id="container">
+<div id="topnav">  
+	<ul id="menu">
+        <li><a href="#">What's new?</a>
+          <ul class="active">
+            <li><a href="#">Weekly specials</a></li>
+                    <li><a href="#">Last night's pics!</a></li>
+                    <li><a href="#">Users' comments</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Member extras</a>
+                <ul>
+                    <li><a href="#">Premium Celebrities</a></li>
+                    <li><a href="#">24-hour Surveillance</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About Us</a>
+                <ul>
+                    <li><a href="#">Privacy Statement</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </li>
+        </ul> 
+</div>
+<div id="content">
+<h1> Drop down Menu's </h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna cursus ligula rutrum lacinia. Vestibulum a blandit dui. Quisque et purus sapien, vel adipiscing felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor congue iaculis. Sed laoreet elementum ligula eget pharetra. Mauris at metus vel nulla aliquam venenatis in sed felis. Aliquam dignissim iaculis feugiat. Vestibulum ut nisi ut nibh scelerisque placerat. Nam tincidunt, urna ac semper scelerisque, libero ante euismod leo, feugiat euismod enim diam sit amet ligula. Nulla facilisis dictum tempus. In consequat justo et dui posuere dictum. Mauris sit amet feugiat magna. Mauris quis leo et velit congue pretium in a erat. Donec luctus lacinia porta.</p>
+
+<div id="footer"> &copy; 2011 </div>
+</div>
+</body>
+</html>
