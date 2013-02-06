@@ -1,1 +1,0 @@
-The skills required here are: Perl, PHP and Java
