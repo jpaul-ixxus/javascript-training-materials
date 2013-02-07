@@ -8,5 +8,5 @@
  *
  * http://docs.jquery.com/UI/Theming
  */
-@import url("jquery.ui.base.css");
-@import url("jquery.ui.theme.css");
+@import "jquery.ui.base.css";
+@import "jquery.ui.theme.css";
